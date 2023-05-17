@@ -51,7 +51,7 @@ const Hero = () => {
 };
 
 const Wrapper = styled.section`
-  /* height: 100vh; */
+  max-height: max-content !important;
   text-align: center;
   /* background-color: orange; */
   > div {
@@ -136,8 +136,9 @@ const Wrapper = styled.section`
     font-size: 1.3rem;
     hr {
       width: 0;
-      height: 5rem;
+      height: 2rem;
       border-color: var(--clr-s-1);
+      margin-bottom: 2rem;
     }
   }
   .scroll-bottom {
@@ -145,6 +146,7 @@ const Wrapper = styled.section`
       font-size: 2rem;
       color: var(--clr-s-1);
       border: none;
+      margin-bottom: 2rem;
     }
   }
   @media only screen and (max-width: 600px) {

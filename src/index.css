@@ -100,3 +100,7 @@ img {
   width: 100%;
   object-fit: cover;
 }
+
+section {
+  height: 100vh;
+}
