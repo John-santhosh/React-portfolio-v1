@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+:root {
+  /* primary color */
+  --clr-p-1: #eff6ff;
+  --clr-p-2: #dbeafe;
+  --clr-p-3: #bfdbfe;
+  --clr-p-4: #93c5fd;
+
+  --clr-p-5: #60a5fa;
+
+  --clr-p-6: #3b82f6;
+  --clr-p-7: #2563eb;
+  --clr-p-8: #1d4ed8;
+  --clr-p-9: #1e40af;
+  --clr-p-10: #1e3a8a;
+  --clr-p-11: #172554;
+
+  /* secondary color */
+  --clr-s-1: #67e8f9;
+  --clr-s-2: #22d3ee;
+  --clr-s-3: #06b6d4;
+  --clr-s-4: #0891b2;
+  --clr-s-5: #0c4a6e;
+
+  /* greyShades */
+
+  /*  */
+  --transition: 0.4s all;
+}
+
+body {
+  background-color: var(--clr-p-11);
+  color: var(--clr-p-1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+  color: var(--clr-p-1);
+}
+a {
+  color: inherit;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn {
+  background-color: transparent;
+  outline: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--clr-1);
+  padding: 10px;
+  border: 1px solid var(--clr-s-1);
+  color: var(--clr-s-1);
+  border-radius: 5px;
+  transition: var(--transition);
+}
+.btn-solid {
+  background-color: var(--clr-s-1);
+  color: var(--clr-s-5);
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  background-color: var(--clr-s-1);
+  color: var(--clr-s-5);
+}
+
+.btn-solid:hover {
+  background-color: transparent;
+  color: var(--clr-s-1);
+}
+.section-center {
+  width: clamp(350px, 90%, 1200px);
+  margin: auto;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
