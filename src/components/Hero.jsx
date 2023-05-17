@@ -51,15 +51,15 @@ const Hero = () => {
 };
 
 const Wrapper = styled.section`
-  min-height: 100vh;
+  /* height: 100vh; */
   text-align: center;
-  background-color: orange;
+  /* background-color: orange; */
   > div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    background-color: red;
+    /* background-color: red; */
   }
   @media only screen and (min-width: 1450px) {
     > div {
@@ -68,7 +68,12 @@ const Wrapper = styled.section`
     }
     div.me {
       width: 22rem;
-      height: 30rem;
+      height: 100%;
+    }
+  }
+  @media only screen and (max-width: 390px) {
+    > div {
+      min-height: 100vh;
     }
   }
   p {
@@ -106,11 +111,7 @@ const Wrapper = styled.section`
 
   .me {
     background-color: var(--clr-s-1);
-    background: linear-gradient(
-      0deg,
-      rgba(11, 47, 52, 1) 6%,
-      rgba(103, 232, 249, 1) 100%
-    );
+    background: linear-gradient(0deg, var(--clr-s-5) 6%, var(--clr-s-1) 100%);
     border-radius: 12rem 12rem 0 0;
     width: 250px;
     overflow: hidden;
