@@ -29,6 +29,7 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.nav`
+  z-index: 999;
   height: 3rem;
   position: fixed;
   bottom: 1.5rem;
@@ -41,18 +42,23 @@ const Wrapper = styled.nav`
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 1.5rem;
+  align-items: center;
   padding: 1.7rem 2rem;
+
+  @media only screen and (max-width: 390px) {
+    padding: 0;
+    gap: 1rem;
+  }
   a {
     display: flex;
     font-size: 1.2rem;
     color: var(--clr-s-1);
     padding: 1rem;
     transition: var(--transition);
+
     :hover {
       color: var(--clr-p-4);
-      background-color: red;
       background-color: rgba(0, 0, 0, 0.742);
       border-radius: 50%;
     }
@@ -60,6 +66,7 @@ const Wrapper = styled.nav`
       color: var(--clr-p-2);
     }
   }
+
   a.active {
     background-color: rgba(54, 54, 54, 0.742);
     border-radius: 50%;

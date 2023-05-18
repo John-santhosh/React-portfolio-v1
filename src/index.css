@@ -39,6 +39,8 @@
 body {
   background-color: var(--clr-p-11);
   color: var(--clr-p-1);
+  width: 100%;
+  padding: 1rem;
 }
 
 html {
@@ -54,7 +56,7 @@ h4,
 h5,
 h6 {
   text-transform: capitalize;
-  color: var(--clr-p-1);
+  color: var(--clr-p-5);
 }
 a {
   color: inherit;
@@ -92,7 +94,7 @@ button {
   color: var(--clr-s-1);
 }
 .section-center {
-  width: clamp(350px, 90%, 1200px);
+  width: clamp(300px, 90%, 1300px);
   margin: auto;
 }
 
@@ -102,5 +104,5 @@ img {
 }
 
 section {
-  height: 100vh;
+  /* min-height: 100vh; */
 }
