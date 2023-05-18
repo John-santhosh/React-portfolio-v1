@@ -65,7 +65,6 @@ const Wrapper = styled.section`
   }
   min-height: 100vh;
   > div {
-    height: 100%;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -73,6 +72,9 @@ const Wrapper = styled.section`
 
     @media only screen and (max-width: 550px) {
       grid-template-rows: 1fr 5fr;
+    }
+    @media only screen and (min-width: 1350px) {
+      height: 100vh;
     }
   }
   .section-container {
@@ -96,20 +98,48 @@ const Wrapper = styled.section`
   .tech-skills {
     background-color: var(--clr-p-9);
     border: 2px solid var(--clr-p-10);
-    border-radius: 2rem;
-    padding: 1.5rem 3rem;
+    border-radius: 0 0 2rem 2rem;
+    /* padding: 1.5rem 3rem; */
+
     margin: 1rem;
+    overflow: hidden;
+    transform-origin: top;
     h3 {
       text-align: center;
       margin-bottom: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       letter-spacing: 1px;
+      padding: 1.5rem 3rem 0.8rem;
+      border-radius: 0 0 2rem 2rem;
+      background: linear-gradient(
+        var(--clr-p-9),
+        var(--clr-p-9) 50%,
+        var(--clr-s-1) 50%,
+        var(--clr-s-1)
+      );
+      background-size: 100% 200%;
+
+      /* background: linear-gradient(#252525, #252525 50%, #2ecc71 50%, #2ecc71); */
+      /* background: linear-gradient(
+        0deg,
+        rgba(11, 47, 52, 1) 21%,
+        rgba(78, 181, 195, 1) 80%
+      ); */
+      /* background-size: 0% 0%; */
+    }
+    :hover h3 {
+      /* background-color: var(--clr-p-11); */
+      background-position: 100% -100%;
+
+      color: var(--clr-p-1);
     }
   }
   .skills {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 1.5rem 3rem;
+
     @media only screen and (min-width: 552px) {
       grid-template-columns: 1fr 1fr;
     }
