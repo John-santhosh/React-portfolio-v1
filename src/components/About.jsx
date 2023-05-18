@@ -54,6 +54,9 @@ const Wrapper = styled.section`
   grid-template-rows: 1fr 5fr;
   place-items: center;
   align-items: end;
+  p {
+    line-height: 2;
+  }
   @media only screen and (min-width: 450px) {
     gap: 5rem;
   }
@@ -63,9 +66,9 @@ const Wrapper = styled.section`
   }
   > div {
     display: grid;
-    grid-template-columns: 35% 50%;
+    grid-template-columns: 35% 55%;
     place-items: center;
-    gap: 15%;
+    gap: 10%;
     place-self: center;
     @media only screen and (max-width: 550px) {
       gap: 0%;
@@ -73,14 +76,17 @@ const Wrapper = styled.section`
     @media only screen and (max-width: 992px) {
       grid-template-columns: unset;
       grid-template-rows: 50% 50%;
+      .img-container {
+        width: 60%;
+      }
     }
   }
   div.about-card {
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     width: 100%;
     > div {
-      min-width: 170px;
+      min-width: 200px;
     }
   }
 
@@ -90,17 +96,23 @@ const Wrapper = styled.section`
     flex-wrap: wrap;
     margin-bottom: 1rem;
     width: 100%;
-    @media only screen and (min-width: 769px) {
-    }
     justify-content: center;
     gap: 2rem;
+    @media only screen and (min-width: 992px) {
+      justify-content: space-between;
+    }
     > * {
       text-align: center;
       background-color: var(--clr-p-9);
+      border: 2px solid var(--clr-p-10);
       border-radius: 10px;
       padding: 2rem;
+      transition: var(--transition);
       svg {
         font-size: 1.3rem;
+      }
+      :hover {
+        background-color: transparent;
       }
     }
   }
@@ -112,6 +124,7 @@ const Wrapper = styled.section`
     justify-items: start;
   }
   .img-container {
+    width: 100%;
     object-fit: cover;
     display: grid;
     place-items: center;
@@ -121,10 +134,11 @@ const Wrapper = styled.section`
       var(--clr-s-1),
       transparent
     );
+    border-radius: 2rem;
   }
   .img-container img {
     transform: rotate(10deg);
-    border-radius: 10px;
+    border-radius: 2rem;
     aspect-ratio: 1/1;
     transition: var(--transition);
   }
