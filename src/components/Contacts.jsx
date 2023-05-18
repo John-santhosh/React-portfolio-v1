@@ -1,7 +1,9 @@
 import styled from "styled-components";
 const Contacts = () => {
-  return <Wrapper>Contacts</Wrapper>;
+  return <Wrapper id="contact">Contacts</Wrapper>;
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  height: 100vh;
+`;
 export default Contacts;

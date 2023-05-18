@@ -40,7 +40,7 @@ body {
   background-color: var(--clr-p-11);
   color: var(--clr-p-1);
   width: 100%;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 html {

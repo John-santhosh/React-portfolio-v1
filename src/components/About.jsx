@@ -51,18 +51,19 @@ const About = () => {
 const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 5fr;
   place-items: center;
   align-items: end;
   p {
     line-height: 2;
   }
   @media only screen and (min-width: 450px) {
-    gap: 5rem;
+    /* gap: 5rem; */
   }
   span {
     display: grid;
-    place-items: center;
+    text-align: center;
+    place-self: center;
+    margin-top: 1rem;
   }
   > div {
     display: grid;
@@ -70,15 +71,16 @@ const Wrapper = styled.section`
     place-items: center;
     gap: 10%;
     place-self: center;
-    @media only screen and (max-width: 550px) {
-      gap: 0%;
-    }
     @media only screen and (max-width: 992px) {
+      grid-template-rows: 1fr 1fr;
       grid-template-columns: unset;
-      grid-template-rows: 50% 50%;
       .img-container {
         width: 60%;
       }
+    }
+    @media only screen and (max-width: 550px) {
+      gap: 2rem;
+      grid-template-rows: 2fr 5fr;
     }
   }
   div.about-card {

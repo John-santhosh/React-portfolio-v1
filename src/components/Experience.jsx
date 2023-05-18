@@ -6,7 +6,6 @@ const Experience = () => {
 
 const Wrapper = styled.section`
   height: 100vh;
-  margin-top: 20rem;
   background-color: #6d6dcd;
 `;
 export default Experience;

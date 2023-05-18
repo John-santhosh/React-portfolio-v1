@@ -2,10 +2,10 @@ import "./App.css";
 import {
   About,
   Contacts,
-  Experience,
+  // Experience,
   Hero,
   Navbar,
-  Testimonials,
+  // Testimonials,
   Footer,
   MySkills,
   MyProjects,
@@ -16,12 +16,12 @@ function App() {
       <Navbar></Navbar>
       <Hero></Hero>
       <About></About>
-      <Experience></Experience>
-      <Testimonials></Testimonials>
+      <MySkills></MySkills>
+      {/* <Experience></Experience> */}
+      {/* <Testimonials></Testimonials> */}
+      <MyProjects></MyProjects>
       <Contacts></Contacts>
       <Footer></Footer>
-      <MySkills></MySkills>
-      <MyProjects></MyProjects>
     </>
   );
 }

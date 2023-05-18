@@ -51,30 +51,19 @@ const Hero = () => {
 };
 
 const Wrapper = styled.section`
-  /* min-width: 320px; */
-  /* background-color: orange; */
   text-align: center;
   h2 {
     color: var(--clr-p-1);
   }
   > div {
     display: grid;
-    /* width: 100%; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    /* height: 100%; */
   }
   @media only screen and (min-width: 1450px) {
     > div {
       gap: 5rem;
       grid-template-rows: 1fr 1fr;
+    }
 
-      /* height: 100vh; */
-    }
-    div.me {
-      /* max-width: 22rem; */
-      /* height: 100%; */
-    }
   }
   @media only screen and (max-width: 390px) {
     > div {
