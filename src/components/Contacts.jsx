@@ -2,27 +2,65 @@ import styled from "styled-components";
 import { RiMailStarLine } from "react-icons/ri";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiCopy } from "react-icons/fi";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 const Contacts = () => {
+  const [mailSent, setMailSent] = useState(true);
+  const [message, setMessage] = useState(true);
+  const form = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(form);
+    // "YOUR_SERVICE_ID",
+    // "YOUR_TEMPLATE_ID",
+    // "YOUR_PUBLIC_KEY"
+    setMailSent(false);
+
+    emailjs
+      .sendForm(
+        "service_5pg3xqm",
+        "template_v2ikjp5",
+        form.current,
+        "UYyklTY4JoFTNUi08"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          form.current.reset();
+          setMailSent(true);
+          setMessage(true);
+        },
+        (error) => {
+          console.log(error.text);
+          setMailSent(true);
+          setMessage(false);
+        }
+      );
+  };
   const [textCopied, setTextCopied] = useState(false);
   const copiedText = () => {
-    setTextCopied(true);
+    setTextCopied(!textCopied);
     setTimeout(() => {
-      setTextCopied(false);
+      setTextCopied((prev) => {
+        return !prev;
+      });
     }, 2000);
   };
   return (
     <Wrapper id="contact">
-      <p>Get In Touch</p>
-      <h2>Contact Me</h2>
+      <span>
+        <p>Get In Touch</p>
+        <h2>Contact Me</h2>
+      </span>
       <div className="section-center">
         <div className="contacts">
           <div className="contact">
             <FiCopy
+              title="Copy!"
               className="copy"
               onClick={() => {
                 window.navigator.clipboard.writeText("johnsantosh2@gamil.com");
-                setTextCopied(!textCopied);
+                copiedText();
               }}
             />
             <small className={textCopied ? "hidden active" : "hidden"}>
@@ -52,12 +90,40 @@ const Contacts = () => {
           </div>
         </div>
         <div className="contact-form">
-          <form>
-            <input placeholder="something" type="text" name="" id="" />
-            <input placeholder="something" type="email" name="" id="" />
-            <textarea placeholder="something" name="" id="" rows="8"></textarea>
-            <button className="btn btn-solid">Send Message </button>
+          <form ref={form} onSubmit={handleSubmit}>
+            <input
+              placeholder="Full Name"
+              required
+              type="text"
+              name="name"
+              id=""
+            />
+            <input
+              placeholder="email@email.com"
+              type="email"
+              name="email"
+              id=""
+            />
+            <textarea
+              placeholder="Message"
+              name="message"
+              id=""
+              rows="8"
+            ></textarea>
+            {mailSent ? (
+              <button className="btn btn-solid">Send Message </button>
+            ) : (
+              <button type="button" className="btn btn-solid">
+                <div className="spinner"></div>
+              </button>
+            )}
           </form>
+
+          <p className={mailSent ? "text-hide" : "active"}>
+            {message
+              ? "Mail received, I will get back to you Shortly"
+              : "There was an error! Please try again after some time"}
+          </p>
         </div>
       </div>
     </Wrapper>
@@ -67,7 +133,17 @@ const Contacts = () => {
 const Wrapper = styled.div`
   text-align: center;
   min-height: 100vh;
-
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  @media only screen and (min-width: 800px) {
+    grid-template-rows: 2fr 6fr;
+  }
+  > span {
+    place-self: center;
+  }
+  .text-hide {
+    opacity: 0;
+  }
   .hidden {
     transition: var(--transition);
     position: absolute;
@@ -81,6 +157,7 @@ const Wrapper = styled.div`
   }
   p {
     text-transform: capitalize;
+    /* text-align: left; */
   }
   > div {
     display: grid;
@@ -88,6 +165,7 @@ const Wrapper = styled.div`
     gap: 8rem;
     @media only screen and (max-width: 768px) {
       grid-template-columns: unset;
+      gap: 4rem;
     }
     @media only screen and (max-width: 425px) {
       justify-items: center;
@@ -134,8 +212,6 @@ const Wrapper = styled.div`
   .contact-form {
     form {
       display: grid;
-      /* flex-direction: column; */
-      /* grid-template-rows: repeat(4, 50px); */
       justify-items: start;
       > *:not(button) {
         padding: 1rem;
@@ -150,6 +226,7 @@ const Wrapper = styled.div`
         ::placeholder {
           color: var(--clr-p-2);
           font-weight: 300;
+          font-size: 1rem;
         }
       }
       gap: 1rem;

@@ -133,3 +133,22 @@ nav.vertical-nav a {
     transform: rotate(0);
   }
 }
+
+.spinner {
+  border: 2px solid transparent;
+  border-top: 2px solid rgb(0, 98, 255);
+  border-bottom: 2px solid rgb(0, 119, 255);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
