@@ -20,14 +20,16 @@ export const navLinks = [
 
 export const skills = {
   frontend: [
-    { id: nanoid(), Icon: CgRadioChecked, skill: "HTML", level: "Skilled" },
-    { id: nanoid(), Icon: CgRadioChecked, skill: "CSS", level: "Skilled" },
+    { id: nanoid(), Icon: CgRadioChecked, skill: "React", level: "Skilled" },
     {
       id: nanoid(),
       Icon: CgRadioChecked,
       skill: "JavaScript",
       level: "skilled",
     },
+    { id: nanoid(), Icon: CgRadioChecked, skill: "HTML", level: "Skilled" },
+    { id: nanoid(), Icon: CgRadioChecked, skill: "CSS", level: "Skilled" },
+
     {
       id: nanoid(),
       Icon: CgRadioChecked,
@@ -40,7 +42,12 @@ export const skills = {
       skill: "Bootstrap",
       level: "Intermediate",
     },
-    { id: nanoid(), Icon: CgRadioChecked, skill: "React", level: "Skilled" },
+    {
+      id: nanoid(),
+      Icon: CgRadioChecked,
+      skill: "styled-components",
+      level: "Skilled",
+    },
   ],
 
   backend: [

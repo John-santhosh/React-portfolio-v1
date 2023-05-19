@@ -2,10 +2,14 @@ import styled from "styled-components";
 import { BiMessageRounded, BiMoveHorizontal } from "react-icons/bi";
 import { navLinks } from "../data";
 import { useState } from "react";
+import { useGlobalContext } from "../Context";
+
 const Navbar = () => {
+  const { verticalNav, setVerticalNav } = useGlobalContext();
   const [activeLink, setActiveLink] = useState(1);
+
   return (
-    <Wrapper>
+    <Wrapper className={verticalNav ? "vertical-nav" : null}>
       {navLinks.map((link) => {
         const { Icon, id, url } = link;
         const activeId = id === activeLink;
@@ -21,9 +25,12 @@ const Navbar = () => {
         );
       })}
 
-      <a>
+      <button
+        onClick={() => setVerticalNav(!verticalNav)}
+        className="btn btn-clear"
+      >
         <BiMoveHorizontal />
-      </a>
+      </button>
     </Wrapper>
   );
 };
@@ -46,6 +53,13 @@ const Wrapper = styled.nav`
   align-items: center;
   padding: 1.7rem 2rem;
 
+  button {
+    font-size: 1.3rem;
+    display: flex;
+    color: var(--clr-s-1);
+    padding: 1rem;
+    transition: var(--transition);
+  }
   @media only screen and (max-width: 390px) {
     padding: 0;
     gap: 1rem;
@@ -57,7 +71,8 @@ const Wrapper = styled.nav`
     padding: 1rem;
     transition: var(--transition);
 
-    :hover {
+    :hover,
+    button.btn:hover {
       color: var(--clr-p-4);
       background-color: rgba(0, 0, 0, 0.742);
       border-radius: 50%;

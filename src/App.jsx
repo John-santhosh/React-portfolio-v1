@@ -10,9 +10,10 @@ import {
   MySkills,
   MyProjects,
 } from "./components/allCompIndex";
+import AppContext from "./Context";
 function App() {
   return (
-    <>
+    <AppContext>
       <Navbar></Navbar>
       <Hero></Hero>
       <About></About>
@@ -22,7 +23,7 @@ function App() {
       <MyProjects></MyProjects>
       <Contacts></Contacts>
       <Footer></Footer>
-    </>
+    </AppContext>
   );
 }
 

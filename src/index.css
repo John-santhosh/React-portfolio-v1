@@ -83,6 +83,9 @@ button {
   color: var(--clr-s-5);
   text-transform: capitalize;
 }
+.btn-clear {
+  border: none;
+}
 
 .btn:hover {
   background-color: var(--clr-s-1);
@@ -109,4 +112,15 @@ section {
 
 h5 {
   letter-spacing: 1px;
+}
+
+nav.vertical-nav {
+  flex-direction: column;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  left: 2rem;
+  width: unset;
+  height: max-content;
+  padding: 0;
 }

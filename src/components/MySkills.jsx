@@ -87,6 +87,16 @@ const Wrapper = styled.section`
     @media only screen and (min-width: 1300px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
+
+    @media only screen and (min-width: 550px) {
+      > div:first-child {
+        > div.skills {
+          > div:last-child {
+            grid-column: 1/3;
+          }
+        }
+      }
+    }
   }
   span {
     text-align: center;
