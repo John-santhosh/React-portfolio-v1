@@ -68,19 +68,20 @@ const Wrapper = styled.section`
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-rows: 2fr 5fr;
+    grid-template-rows: 1fr 5fr;
 
     @media only screen and (max-width: 550px) {
-      grid-template-rows: 1fr 5fr;
+      grid-template-rows: 1fr 6fr;
     }
     @media only screen and (min-width: 1350px) {
+      grid-template-rows: 2fr 5fr;
       height: 100vh;
     }
   }
   .section-container {
     display: grid;
     place-self: start;
-    gap: 2rem;
+    /* gap: 2rem; */
     @media only screen and (min-width: 840px) {
       grid-template-columns: 1fr 1fr;
     }
@@ -119,7 +120,7 @@ const Wrapper = styled.section`
       margin-bottom: 1rem;
       font-size: 1.3rem;
       letter-spacing: 1px;
-      padding: 1.5rem 3rem 0.8rem;
+      padding: 1.5rem 2rem 0.8rem;
       border-radius: 0 0 2rem 2rem;
       background: linear-gradient(
         var(--clr-p-9),
@@ -157,7 +158,7 @@ const Wrapper = styled.section`
 
   .skill {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     align-items: center;
   }
 `;
