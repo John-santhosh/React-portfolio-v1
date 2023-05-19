@@ -46,13 +46,18 @@ const Wrapper = styled.nav`
   margin: auto;
   text-align: center;
   border-radius: 100px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.528);
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   align-items: center;
   padding: 1.7rem 2rem;
-
+  transition: all 1s;
+  @media only screen and (max-width: 767px) {
+    .btn-clear {
+      display: none;
+    }
+  }
   button {
     font-size: 1.3rem;
     display: flex;

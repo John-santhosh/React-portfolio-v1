@@ -40,7 +40,6 @@ body {
   background-color: var(--clr-p-11);
   color: var(--clr-p-1);
   width: 100%;
-  /* padding: 1rem; */
 }
 
 html {
@@ -97,7 +96,7 @@ button {
   color: var(--clr-s-1);
 }
 .section-center {
-  width: clamp(300px, 90%, 1300px);
+  width: clamp(300px, 90%, 1200px);
   margin: auto;
 }
 
@@ -115,12 +114,22 @@ h5 {
 }
 
 nav.vertical-nav {
-  flex-direction: column;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  left: 2rem;
-  width: unset;
-  height: max-content;
-  padding: 0;
+  transform: translateY(-50%) rotate(90deg);
+  bottom: 50%;
+  left: -11rem;
+}
+
+nav.vertical-nav a {
+  transform: rotate(-90deg);
+}
+
+@media only screen and (max-width: 767px) {
+  nav.vertical-nav {
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  nav.vertical-nav a {
+    transform: rotate(0);
+  }
 }
