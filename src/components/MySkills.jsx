@@ -142,7 +142,7 @@ const Wrapper = styled.section`
       /* background-color: var(--clr-p-11); */
       background-position: 100% -100%;
 
-      color: var(--clr-p-1);
+      color: var(--clr-p-7);
     }
   }
   .skills {

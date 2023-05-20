@@ -47,7 +47,7 @@ const Wrapper = styled.nav`
   margin: auto;
   text-align: center;
   border-radius: 100px;
-  background-color: rgba(0, 0, 0, 0.528);
+  background-color: rgba(0, 0, 0, 0.694);
   display: flex;
   justify-content: center;
   gap: 1.5rem;
@@ -62,7 +62,7 @@ const Wrapper = styled.nav`
   button {
     font-size: 1.3rem;
     display: flex;
-    color: var(--clr-s-1);
+    color: var(--clr-p-9);
     padding: 1rem;
     transition: var(--transition);
   }
@@ -73,7 +73,7 @@ const Wrapper = styled.nav`
   a {
     display: flex;
     font-size: 1.2rem;
-    color: var(--clr-s-1);
+    color: var(--clr-p-9);
     padding: 1rem;
     transition: var(--transition);
 

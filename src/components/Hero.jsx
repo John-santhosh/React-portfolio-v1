@@ -76,7 +76,7 @@ const Wrapper = styled.section`
     color: var(--clr-p-3);
   }
   p:first-child {
-    color: #fff;
+    /* color: #fff; */
     font-weight: 600;
     padding-top: 3rem;
   }

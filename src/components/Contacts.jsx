@@ -177,7 +177,7 @@ const Wrapper = styled.div`
         cursor: pointer;
       }
       p {
-        color: #fff;
+        /* color: #fff; */
       }
       span {
         color: var(--clr-p-1);

@@ -26,7 +26,7 @@ const About = () => {
             <div>
               <SlBadge />
               <h5>Projects</h5>
-              <p>50+ Completed</p>
+              <p>30+ Completed</p>
             </div>
             <div>
               <SlBadge />
@@ -35,12 +35,23 @@ const About = () => {
             </div>
           </div>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-            vitae id dolorem? Dolore vitae aliquid quam voluptas numquam
-            adipisci reprehenderit eos delectus corrupti dicta quia, animi
-            doloribus necessitatibus ut nam.
-          </p>
+          <ol>
+            <li>I am passionate about bringing website to life</li>
+            <li>
+              I have a bachelor&#39;s degree in &#39;computer application&#39;
+              from Madras University, 8 months of relevant IT experience
+            </li>
+            <li>
+              This coding habit started as a hobby and Now about to start my
+              carrier as a developer
+            </li>
+            <li>
+              I&#39;m happiest when creating, exploring, and thinking about
+              improving things. I&#39;m available for any freelancing or
+              internship or full-time SE role, feel free to reach out and say
+              hello!
+            </li>
+          </ol>
           <a href="#contact">
             <button className="btn btn-solid">Lets talk</button>
           </a>
@@ -126,6 +137,13 @@ const Wrapper = styled.section`
     display: grid;
     place-items: center;
     justify-items: start;
+    gap: 1rem;
+    ol {
+      list-style: none;
+      li {
+        margin: 0.5rem 0;
+      }
+    }
   }
   .img-container {
     width: 100%;

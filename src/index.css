@@ -9,26 +9,24 @@
 
 :root {
   /* primary color */
-  --clr-p-1: #eff6ff;
-  --clr-p-2: #dbeafe;
-  --clr-p-3: #bfdbfe;
-  --clr-p-4: #93c5fd;
-
-  --clr-p-5: #60a5fa;
-
-  --clr-p-6: #3b82f6;
-  --clr-p-7: #2563eb;
-  --clr-p-8: #1d4ed8;
-  --clr-p-9: #1e40af;
-  --clr-p-10: #1e3a8a;
-  --clr-p-11: #1e1b4b;
+  --clr-p-11: #f9fafb;
+  --clr-p-10: #f3f4f6;
+  --clr-p-9: #e5e7eb;
+  --clr-p-8: #d1d5db;
+  --clr-p-7: #9ca3af;
+  --clr-p-6: #6b7280;
+  --clr-p-5: #4b5563;
+  --clr-p-4: #374151;
+  --clr-p-3: #1f2937;
+  --clr-p-2: #111827;
+  --clr-p-1: #030712;
 
   /* secondary color */
-  --clr-s-1: #0ea5e9;
-  --clr-s-2: #38bdf8;
-  --clr-s-3: #7dd3fc;
-  --clr-s-4: #0284c7;
-  --clr-s-5: #0c4a6e;
+  --clr-s-1: #111827;
+  --clr-s-2: #374151;
+  --clr-s-3: #4b5563;
+  --clr-s-4: #6b7280;
+  --clr-s-5: #9ca3af;
 
   /* greyShades */
 
@@ -141,12 +139,17 @@ nav.vertical-nav a {
 
 .spinner {
   border: 2px solid transparent;
-  border-top: 2px solid rgb(0, 98, 255);
-  border-bottom: 2px solid rgb(0, 119, 255);
+  border-top: 2px solid var(--clr-p-3);
+  border-bottom: 2px solid var(--clr-p-3);
   border-radius: 50%;
   height: 20px;
   width: 20px;
   animation: loading 1s infinite linear;
+}
+.spinner-center {
+  height: 80px;
+  width: 80px;
+  margin: auto;
 }
 
 @keyframes loading {
