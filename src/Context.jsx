@@ -17,7 +17,7 @@ const AppContext = ({ children }) => {
       .select({ view: "Grid view" })
       .eachPage((records) => {
         const product = records.map((item) => {
-          return item.fields;
+          return { ...item.fields, id: item.id };
         });
 
         setProducts(product);
