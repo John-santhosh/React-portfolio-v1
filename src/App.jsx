@@ -1,4 +1,6 @@
+import { ToastContainer } from "react-toastify";
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 import {
   About,
   Contacts,
@@ -14,12 +16,11 @@ import AppContext from "./Context";
 function App() {
   return (
     <AppContext>
+      <ToastContainer position="top-center" />
       <Navbar></Navbar>
       <Hero></Hero>
       <About></About>
       <MySkills></MySkills>
-      {/* <Experience></Experience> */}
-      {/* <Testimonials></Testimonials> */}
       <MyProjects></MyProjects>
       <Contacts></Contacts>
       <Footer></Footer>

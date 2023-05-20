@@ -114,11 +114,16 @@ h5 {
 }
 
 nav.vertical-nav {
-  transform: translateY(-50%) rotate(90deg);
+  transform: translateY(50%) rotate(90deg);
   bottom: 50%;
-  left: -11rem;
+  left: -12rem;
 }
 
+@media only screen and (min-width: 1450px) {
+  nav.vertical-nav {
+    left: -11rem;
+  }
+}
 nav.vertical-nav a {
   transform: rotate(-90deg);
 }

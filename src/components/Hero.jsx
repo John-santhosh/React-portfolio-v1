@@ -26,10 +26,10 @@ const Hero = () => {
           <div className="social-links">
             <div className="social-icons">
               {social.map((item) => {
-                const { id, url, FaHome } = item;
+                const { id, url, Icon } = item;
                 return (
-                  <a href={url} key={id}>
-                    <FaHome />
+                  <a target="_blank" href={url} key={id} rel="noreferrer">
+                    <Icon />
                   </a>
                 );
               })}
@@ -40,9 +40,11 @@ const Hero = () => {
             <img src={profileImg} alt="its me" />
           </div>
           <div className="scroll-bottom">
-            <button>
-              <FaChevronCircleDown />
-            </button>
+            <a href="#footer">
+              <button>
+                <FaChevronCircleDown />
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -63,7 +65,6 @@ const Wrapper = styled.section`
       gap: 5rem;
       grid-template-rows: 1fr 1fr;
     }
-
   }
   @media only screen and (max-width: 390px) {
     > div {
@@ -129,6 +130,13 @@ const Wrapper = styled.section`
     gap: 1rem;
     color: var(--clr-s-1);
     font-size: 1.3rem;
+    > a:hover {
+      transition: var(--transition);
+      svg {
+        transition: var(--transition);
+        filter: drop-shadow(0px 0px 15px var(--clr-p-2));
+      }
+    }
     hr {
       width: 0;
       height: 2rem;

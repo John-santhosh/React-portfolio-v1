@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { BiMessageRounded, BiMoveHorizontal } from "react-icons/bi";
+import { BiMoveHorizontal } from "react-icons/bi";
+import { HiArrowSmUp } from "react-icons/hi";
 import { navLinks } from "../data";
 import { useState } from "react";
 import { useGlobalContext } from "../Context";
@@ -29,7 +30,7 @@ const Navbar = () => {
         onClick={() => setVerticalNav(!verticalNav)}
         className="btn btn-clear"
       >
-        <BiMoveHorizontal />
+        {verticalNav ? <HiArrowSmUp></HiArrowSmUp> : <BiMoveHorizontal />}
       </button>
     </Wrapper>
   );

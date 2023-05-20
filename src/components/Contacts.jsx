@@ -1,19 +1,14 @@
 import styled from "styled-components";
-import { RiMailStarLine } from "react-icons/ri";
-import { FaWhatsapp } from "react-icons/fa";
 import { FiCopy } from "react-icons/fi";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+import { contacts } from "../data";
 const Contacts = () => {
   const [mailSent, setMailSent] = useState(true);
-  const [message, setMessage] = useState(true);
   const form = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(form);
-    // "YOUR_SERVICE_ID",
-    // "YOUR_TEMPLATE_ID",
-    // "YOUR_PUBLIC_KEY"
     setMailSent(false);
 
     emailjs
@@ -28,24 +23,16 @@ const Contacts = () => {
           console.log(result.text);
           form.current.reset();
           setMailSent(true);
-          setMessage(true);
+          toast.success("Mail Sent successfully");
         },
         (error) => {
           console.log(error.text);
           setMailSent(true);
-          setMessage(false);
+          toast.error("please try after some time!");
         }
       );
   };
-  const [textCopied, setTextCopied] = useState(false);
-  const copiedText = () => {
-    setTextCopied(!textCopied);
-    setTimeout(() => {
-      setTextCopied((prev) => {
-        return !prev;
-      });
-    }, 2000);
-  };
+
   return (
     <Wrapper id="contact">
       <span>
@@ -54,40 +41,9 @@ const Contacts = () => {
       </span>
       <div className="section-center">
         <div className="contacts">
-          <div className="contact">
-            <FiCopy
-              title="Copy!"
-              className="copy"
-              onClick={() => {
-                window.navigator.clipboard.writeText("johnsantosh2@gamil.com");
-                copiedText();
-              }}
-            />
-            <small className={textCopied ? "hidden active" : "hidden"}>
-              Copied!
-            </small>
-            <RiMailStarLine />
-            <p>email</p>
-            <span>johnsantosh2@gamil.com</span>
-
-            <a href="mailto:johnsantosh2@gamil.com">Send a message</a>
-          </div>
-          <div className="contact">
-            <FiCopy className="copy" />
-            <RiMailStarLine />
-            <p>email</p>
-            <span>john@leaning.con</span>
-            <a href="mailto:johnsantosh2@gamil.com">Send a message</a>
-          </div>
-          <div className="contact">
-            <FiCopy className="copy" />
-            <FaWhatsapp />
-            <p>Whatsapp</p>
-            <span>7550188335</span>
-            <a href="https://Wa.me/7550188335" target="_blank" rel="noreferrer">
-              Send a message
-            </a>
-          </div>
+          {contacts.map((contact) => {
+            return <Contact key={contact.id} {...contact} />;
+          })}
         </div>
         <div className="contact-form">
           <form ref={form} onSubmit={handleSubmit}>
@@ -118,17 +74,42 @@ const Contacts = () => {
               </button>
             )}
           </form>
-
-          <p className={mailSent ? "text-hide" : "active"}>
-            {message
-              ? "Mail received, I will get back to you Shortly"
-              : "There was an error! Please try again after some time"}
-          </p>
         </div>
       </div>
     </Wrapper>
   );
 };
+
+function Contact({ id, Icon, text, connect, connectId, url }) {
+  const [textCopied, setTextCopied] = useState(false);
+  const copiedText = () => {
+    setTextCopied(!textCopied);
+    setTimeout(() => {
+      setTextCopied((prev) => {
+        return !prev;
+      });
+    }, 2000);
+  };
+  return (
+    <div key={id} className="contact">
+      <FiCopy
+        title="Copy!"
+        className="copy"
+        onClick={() => {
+          window.navigator.clipboard.writeText(connectId);
+          copiedText();
+        }}
+      />
+      <small className={textCopied ? "hidden active" : "hidden"}>Copied!</small>
+      <Icon />
+      <p>{connect}</p>
+      <span>{connectId}</span>
+      <a href={url} target="_blank" rel="noreferrer">
+        {text}
+      </a>
+    </div>
+  );
+}
 
 const Wrapper = styled.div`
   text-align: center;

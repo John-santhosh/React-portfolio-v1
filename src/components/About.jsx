@@ -41,7 +41,9 @@ const About = () => {
             adipisci reprehenderit eos delectus corrupti dicta quia, animi
             doloribus necessitatibus ut nam.
           </p>
-          <button className="btn btn-solid">Lets talk</button>
+          <a href="#contact">
+            <button className="btn btn-solid">Lets talk</button>
+          </a>
         </div>
       </div>
     </Wrapper>

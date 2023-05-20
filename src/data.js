@@ -61,7 +61,7 @@ export const contacts = [
     Icon: FaWhatsapp,
     text: "Send a message",
     connect: "Whatsapp",
-    connectId: "75501883XX",
+    connectId: "75501883XXX",
     url: "https://Wa.me/7550188335",
   },
 ];
