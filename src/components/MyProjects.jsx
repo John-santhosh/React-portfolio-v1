@@ -118,7 +118,6 @@ const Wrapper = styled.section`
   .card {
     padding: 1rem;
     border-radius: 1rem;
-    /* width: clamp(300px, 100%, 30%); */
     background-color: var(--clr-p-9);
     display: grid;
     gap: 2rem;
@@ -129,11 +128,12 @@ const Wrapper = styled.section`
   }
   .img-container {
     display: grid;
-    grid-template-columns: 10fr 1fr;
+    grid-template-rows: 5fr 1fr;
+    place-items: center;
     gap: 2rem;
     @media only screen and (max-width: 768px) {
       grid-template-columns: unset;
-      grid-template-rows: 4fr 1fr;
+      /* grid-template-rows: 2fr 1fr; */
       .sub-images {
         grid-template-rows: unset;
         grid-template-columns: repeat(5, 1fr);
@@ -141,8 +141,10 @@ const Wrapper = styled.section`
       }
     }
     > img {
-      min-height: auto;
-      width: 100%;
+      max-height: 350px;
+      min-height: 350px;
+      overflow: hidden;
+      /* width: 100%; */
       /* max-width: 400px; */
       /* max-height: 350px; */
       border-radius: 1rem;
@@ -151,21 +153,27 @@ const Wrapper = styled.section`
   }
   .sub-images {
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     object-fit: cover;
     .active-img {
       filter: opacity(100%);
-      border: 2px solid var(--clr-s-1);
+      border-radius: 50%;
+      border: 1px solid var(--clr-s-1);
     }
+
     button {
-      /* width: 50px;
-      height: ; */
-      border: 2px solid transparent;
+      max-width: 75px;
+      max-height: 75px;
+      border: 1px solid transparent;
       transition: var(--transition);
-      filter: opacity(50%);
+      filter: opacity(35%);
+      :hover {
+        filter: opacity(70%);
+      }
       img {
         height: 100%;
+        border-radius: 50%;
       }
     }
   }
@@ -181,14 +189,15 @@ const Wrapper = styled.section`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 1rem;
     }
     small {
       font-size: 1rem;
       color: var(--clr-p-5);
-      display: grid;
-      grid-template-columns: 1fr 5fr;
-      margin-right: 1rem;
-      place-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
     }
     .links-container {
       display: flex;
