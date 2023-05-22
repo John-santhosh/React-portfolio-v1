@@ -87,11 +87,18 @@ const Wrapper = styled.section`
     @media only screen and (max-width: 992px) {
       grid-template-rows: 1fr 1fr;
       grid-template-columns: unset;
+      gap: 0;
+
       .img-container {
-        width: 60%;
+        margin: 3rem 0;
+        width: 65%;
       }
     }
     @media only screen and (max-width: 550px) {
+      .img-container {
+        width: 85%;
+        margin: 3rem 0;
+      }
       gap: 2rem;
       grid-template-rows: 2fr 5fr;
     }
