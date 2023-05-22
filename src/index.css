@@ -44,7 +44,11 @@ html {
   scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: var(--clr-p-7);
 }
 h1,
 h2,
