@@ -91,15 +91,15 @@ const Wrapper = styled.section`
       text-align: center;
       h2 {
         font-size: 3rem;
-        margin-top: 2rem;
+        margin-top: 0;
       }
     }
   }
   .hero-container {
     width: 100%;
     display: flex;
-    gap: 5%;
-    align-items: center;
+    gap: 0.5rem;
+    /* align-items: center; */
     flex-wrap: wrap;
     justify-content: space-between;
     > div:first-child {
