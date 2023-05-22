@@ -6,7 +6,7 @@ import { social } from "../data";
 import { useGlobalContext } from "../Context";
 const Hero = () => {
   const profileImg =
-    "https://lh3.googleusercontent.com/fife/APg5EOZaBdBVpR-hOWk7OFilYU4EVX_AzkiWczj0SjFnwezgyICL8Stz69cYj66b7De76dgeYNVkSLiwI5SdGOqXx5sZnGofpUf5VdK9a3psa2KWsi4ik1lv7j10vCg9ZWPif9IHRWrhaOVEPCgYOkReqHR76Wn8jEGAJ8cPJVCkvxc7hhKTi7uiYLTqWyb4FK4sm8jiTL1ZDDkqwdvxQhIj5y1Tjj1etk-NftI0objtENNDcB7TUEBcNhgOTUW4p_OxhftQmybVeDZM750QsPVKW1weAa-i-qgrCdzyWD1CtYD5uCZCJdu4oeR-CJNrDMtvIarC--6sYmxb9pXTdRpzC8wVBdl6r-Sh6e2d66ITvaGd38LUc2w_uLS8hK9zvIx1BGkiOGIzlgxJZ0yUrNTXRvp4BmqMYzBLd3VbcROJTqno7hwtZOLIhFtxVm4eLnBBmyijyFNTuVlEgPr3iRHOPs4aWo0gbvbKBkgJx69W8MERRXfF60cNM5rmdQZRLROdZSiNlcrrCwTkrNda0qN7fzWNqLIvCZb0Z-qXYEYNi9vu18Mjxd5XVjoC8umbUioTjhnQAsYONOa4ZvqeHZu6U5WaQl6P4p2cveeQaCuPC2S3bgw5FCWMhOpMXQa1cH1mI6gxuk5UyM1NPVlzqp5fvETAo3uq1cHDn0AvBKfuxPuWyGz9LHimCfK-6K2ca6uhZ0ouP02HxUPs3BLJ4klJqxpciJVLdnn7sOKJPM7jWLL_t5hYo7nqfRtKkQb_j0Q5yV848oMOREHDqLDh5vHr51WgT9yNoR1QtLnbDm8RLRJlNpQOSCe8XLxw-0_gS7ZqGf1LjbGriy0s_ks3IPvuc4pM_cKwoeSHLdeVbcHVRBip-3X4U-gC8uK180UMi8nafVtNS1CAOlj5UhOMtiYILTPc2lkLva4XoDYJmsTVvEcGqodejb4SMaKyVr4DxANSDaxLJfVkcVda1lWP_sY94gv4mHGS1h84gVgpNsj5UieLMPWWAUfUJLSaM-3qeKg6b46bR9_ydLyJy8_6buXgDHt_qycGGlfV-cWGdW1x_1RL74qrBxc4KTdzYsBm5sIK_RJckMvO8F4nAfR-7QTdDK4Cnsy6FyIAyYwBKXY2CLXzebL3_fQqQSc1lIt2jOHjQim1kKx5Z20woqdL3Gj5X2hXu-UU_iT6-A5L7e_7pXC8df-2feRVkcsnAoZd9xv26V_31WqI7OGqMg27WnBiCszxOCVaLTCGbFlB835cHg0c-7lKTgStTsSssLOq9Tic9Wc4ud1YV4s2npOEJ7CUMVabX3uSXMgYB5kklA31j8VPl1l7PvlDAKWAheDc3fe1mjJLLI5MBcExtnKIgYQok2mfZkg2577cmqVKAHrNUo2E-MAgA3Xe3lJUTltkSBjQw-UKtfvyW8RsYFH_DwpxSfQpkK9H4kPYuilT5QJZ6toVPTq-zb4_0UDooXy6RP4sgnnMw9HomF1xCfPCCn4psMSt4MGAdSAb3d9rZlcZtups-eVw9QAtsPLqLLoCDGEN8qZ4lpyNfhl_Y33Up5l8SJicM5N6OzkCBxNwQlp3uLNEAhOBNF0CeGS4cN8HAp_jLWAgQVG9AvEmOFAZ6j9PqD1e7qMGaWdwdIozbx81zyvBa2LUF8mP7PLpL-8ca4vdYvqcCN5I0tWRuC6HhyLHZ-uiCKRIFyUFiKwBgx9YhvgQfj_QTdvs8vjTJgV2WqfWr-4tssSaXXvA1NRsoXi0QuRj-sRW8agsGxrcXiQP01ZUDzyG_2sPjzxsjOP1SF4NPK760MKqZ6ohYYFWGBSwZdR7EvRWYfb2jNzn-HWLjQJJ3X-v1bk19BMrwh1osdV8ZC-c5GXOGkHii4uuG9zJp5bdxaND3Fp-f00Zi7nHloibNuyWcDgx1q6P9-d717xC5GjaI19pyA-nyEYiTNcl9CiOODw8ZAdtfE-mZku2Xf9Nd_JXta-rk4-V=s577-w432-h577-s-no?authuser=0";
+    "https://lh3.googleusercontent.com/5F8nL4p_wRyFERPXcuzE5IZe6dxDaovKYsonRrZAAC3Kuv6Zn-2lyE2Hhaow3wGKqYN_mSxoMa1o7ixz4CCiX-6fJnHtMfZ-up-MXxT0Zds_mwYPBwXCBQmUpJBacQOZZn0jZ1E-1odbI5yZa-RW5WVMOwoPz4ltN-H2Ld5lToKUmgWN5fNZs6Dz23pdgMIvqlvSaugSkCpH_X00rth4sGz22ConSHkEPzdKon-whh86SCvutORER-RsdsRrY7Tza5iGqYH9O_BSMLf4ar4Tvs9GL5Jxqh4njqAdQpeLAVhvNefIXNODaAZMXIEyyhWE9HWNw_jtII0I1KbtO2onrUsVfKA_5hvZnCehPMNv24-bSKZ6gSqSOHiBZ-qWYFKYBWd0ohKtaIgsf2CVcOezrflb2uBxhhl4zyPd-6JUJ_YoR3CCAwFQQTN3Zp4onGy1wASfIBhiXpVnAMaNhhLKG4HBQDkndPbgoogGxChegRdv5E7MnGAQWivRlR0FAg8hblb3QypZNxUwIwJoQFt7uMKYRj4T5R0pLNe5QscDF2zB9O50Xrq5_P9gIFQkpFuVtXosXPPC2_nH2EA2ijOUFmIR2lWLPVSBxVh7zJaMDKQpdEQ_Z8WPn1WW1mIfvWwrl6FVeAJLfPByxe2ooZJAwDQUQMjBkNolulQ2Sq38K18Ikmf2te5vnFPy80w5QL81qka3NWE2UBHv_s4yf9TCJVEXmwWjGJDz_Y3TPcn0rNLnkeu5eQYSblP7iuYLF3nteR4ws0ABMBxNHpmPy00RPIGqJE2Rx3-8G_uJNXZYgVj_y0meHKTAlpAoqADiaT9PBR8EIR2QBA2e9iFFyMfYMRPonEEePYsvSPZKyUiY8_aFU45_pEm6j7ZSTk4I7B_IBHHXW8IL7IH5BLuk2_O3N1v_MyJKjR802GbPjQhdn_l_-ekCIw=w327-h437-no?authuser=0";
   const { products } = useGlobalContext();
   const images = products.find((product) => product["tech-stack"] === true);
   return (
@@ -83,9 +83,7 @@ const Wrapper = styled.section`
   }
   > div {
     display: grid;
-    /* grid-template-rows: 5fr 1fr; */
     gap: 3rem;
-    /* max-width: 200px; */
     @media only screen and (max-width: 768px) {
       grid-template-rows: 5fr 2fr;
       text-align: center;
@@ -99,7 +97,6 @@ const Wrapper = styled.section`
     width: 100%;
     display: flex;
     gap: 0.5rem;
-    /* align-items: center; */
     flex-wrap: wrap;
     justify-content: space-between;
     > div:first-child {
@@ -110,12 +107,6 @@ const Wrapper = styled.section`
     }
     @media only screen and (max-width: 992px) {
       justify-content: center;
-    }
-  }
-  @media only screen and (max-width: 768px) {
-    > div {
-      /* min-height: 100vh; */
-      /* grid-template-rows: 1fr 1fr; */
     }
   }
 
@@ -167,9 +158,6 @@ const Wrapper = styled.section`
   }
   .buttons {
     margin: 2rem 0;
-    /* display: flex;
-    justify-content: center;
-    gap: 1rem; */
     button {
       text-transform: capitalize;
     }
@@ -180,10 +168,6 @@ const Wrapper = styled.section`
 
   .hero {
     display: flex;
-    /* justify-content: space-between; */
-    /* gap: 1rem; */
-    /* align-items: flex-end; */
-    /* background-color: red; */
     align-items: center;
     gap: 2rem;
     @media only screen and (max-width: 992px) {
@@ -192,33 +176,23 @@ const Wrapper = styled.section`
   }
 
   .me {
-    /* display: flex; */
-    /* background-color: var(--clr-s-1);
-    background: linear-gradient(0deg, var(--clr-s-5) 6%, var(--clr-s-1) 100%);
-    border-radius: 12rem 12rem 0 0;
-    width: 250px;
-    overflow: hidden; */
     display: grid;
     place-items: center;
     object-fit: cover;
     border-radius: 50%;
     overflow: hidden;
-    /* background-color: red; */
     border: 6px solid var(--clr-p-6);
     aspect-ratio: 1/1;
-    padding: 2rem;
     animation: border-dance 4s linear infinite;
     background-color: #fff;
+    filter: grayscale(20%);
     img {
       width: 100%;
-      object-fit: cover;
-      object-position: top;
-      /* transform: translateY(20px); */
       /* padding: 5rem 1.5rem 1.5rem; */
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
     }
   }
-  @keyframes border-dance {
+  /* @keyframes border-dance {
     0% {
       border-radius: 100% 80% 90% 70%;
     }
@@ -233,6 +207,24 @@ const Wrapper = styled.section`
     }
     100% {
       border-radius: 100% 80% 90% 70%;
+    }
+  } */
+  @keyframes border-dance {
+    0%,
+    100% {
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+      transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    34% {
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+      transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+    }
+    50% {
+      transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+      transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
     }
   }
 

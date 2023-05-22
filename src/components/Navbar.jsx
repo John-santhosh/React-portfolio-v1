@@ -80,18 +80,18 @@ const Wrapper = styled.nav`
     :hover,
     button.btn:hover {
       color: var(--clr-p-4);
-      background-color: rgba(0, 0, 0, 0.742);
+      background-color: rgba(0, 0, 0, 0.984);
       border-radius: 50%;
     }
     :active {
-      color: var(--clr-p-2);
+      color: var(--clr-p-8);
     }
   }
 
   a.active {
-    background-color: rgba(54, 54, 54, 0.742);
+    background-color: #000000b3;
     border-radius: 50%;
-    color: var(--clr-p-2);
+    color: var(--clr-p-8);
   }
 `;
 export default Navbar;
