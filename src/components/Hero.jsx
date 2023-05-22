@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import cv from "../assets/john-santhosh resume1.pdf";
 import { FaChevronCircleDown } from "react-icons/fa";
+import { MdOutlineWavingHand } from "react-icons/md";
 import { social } from "../data";
 import { useGlobalContext } from "../Context";
 const Hero = () => {
@@ -13,13 +14,29 @@ const Hero = () => {
       <div className="section-center">
         <div className="hero-container">
           <div>
-            <h2>Front-End React Developer 🖐️</h2>
+            <h2>
+              Front-End React Developer{" "}
+              <MdOutlineWavingHand className="waves" />
+            </h2>
             <p>
               Hi, I&#39;m John Santhosh. A passionate Front-end React Developer
               base in Chennai.{" "}
             </p>
           </div>
           <div className="hero">
+            <div className="social-links">
+              <div className="social-icons">
+                {social.map((item) => {
+                  const { id, url, Icon } = item;
+                  return (
+                    <a target="_blank" href={url} key={id} rel="noreferrer">
+                      <Icon />
+                    </a>
+                  );
+                })}
+                {/* <hr /> */}
+              </div>
+            </div>
             <div className="me">
               <img src={profileImg} alt="its me" />
             </div>
@@ -47,12 +64,16 @@ const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;
   place-items: center;
+  background-color: var(--clr-p-9);
   h2 {
     color: var(--clr-p-4);
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.2;
     margin-top: 4rem;
+    .waves {
+      transform: translateY(0.8rem);
+    }
   }
   p {
     color: var(--clr-p-6);
@@ -62,13 +83,17 @@ const Wrapper = styled.section`
   }
   > div {
     display: grid;
-    grid-template-rows: 5fr 1fr;
+    /* grid-template-rows: 5fr 1fr; */
     gap: 3rem;
+    /* max-width: 200px; */
     @media only screen and (max-width: 768px) {
-      grid-template-rows: 3fr 1fr;
+      grid-template-rows: 5fr 2fr;
+      text-align: center;
+      h2 {
+        font-size: 3rem;
+        margin-top: 2rem;
+      }
     }
-
-    /* background-color: aquamarine; */
   }
   .hero-container {
     width: 100%;
@@ -78,12 +103,12 @@ const Wrapper = styled.section`
     flex-wrap: wrap;
     justify-content: space-between;
     > div:first-child {
-      width: clamp(350px, 100%, 55%);
+      width: clamp(300px, 100%, 500px);
     }
     > div:last-child {
-      width: clamp(350px, 100%, 20%);
+      width: clamp(350px, 100%, 400px);
     }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 992px) {
       justify-content: center;
     }
   }
@@ -96,23 +121,21 @@ const Wrapper = styled.section`
 
   .stack {
     display: flex;
-    /* flex-direction: ; */
     align-items: center;
-    /* justify-content: center; */
-    gap: 4rem;
     flex-wrap: wrap;
-
+    gap: 4rem;
+    margin-bottom: 1rem;
     h5 {
-      border-right: 2px solid var(--clr-p-6);
       width: 200px;
       font-size: 1rem;
+      border-right: 2px solid var(--clr-p-6);
     }
     > div {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
     }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 992px) {
       justify-content: center;
       flex-direction: column;
 
@@ -161,6 +184,11 @@ const Wrapper = styled.section`
     /* gap: 1rem; */
     /* align-items: flex-end; */
     /* background-color: red; */
+    align-items: center;
+    gap: 2rem;
+    @media only screen and (max-width: 992px) {
+      order: -1;
+    }
   }
 
   .me {
@@ -173,6 +201,14 @@ const Wrapper = styled.section`
     display: grid;
     place-items: center;
     object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    /* background-color: red; */
+    border: 6px solid var(--clr-p-6);
+    aspect-ratio: 1/1;
+    padding: 2rem;
+    animation: border-dance 4s linear infinite;
+    background-color: #fff;
     img {
       width: 100%;
       object-fit: cover;
@@ -180,6 +216,23 @@ const Wrapper = styled.section`
       /* transform: translateY(20px); */
       /* padding: 5rem 1.5rem 1.5rem; */
       filter: grayscale(100%);
+    }
+  }
+  @keyframes border-dance {
+    0% {
+      border-radius: 100% 80% 90% 70%;
+    }
+    25% {
+      border-radius: 90% 70% 60% 80%;
+    }
+    50% {
+      border-radius: 70% 90% 80% 60%;
+    }
+    90% {
+      border-radius: 90% 70% 60% 80%;
+    }
+    100% {
+      border-radius: 100% 80% 90% 70%;
     }
   }
 
@@ -192,12 +245,12 @@ const Wrapper = styled.section`
     align-items: center;
     gap: 1rem;
     color: var(--clr-s-1);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     > a:hover {
       transition: var(--transition);
       svg {
         transition: var(--transition);
-        filter: drop-shadow(0px 0px 15px var(--clr-p-2));
+        filter: drop-shadow(0px 0px 6px var(--clr-s-1));
       }
     }
     hr {
@@ -215,7 +268,7 @@ const Wrapper = styled.section`
       margin-bottom: 2rem;
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (min-width: 992px) {
     .me {
       margin: auto;
     }

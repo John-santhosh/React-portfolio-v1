@@ -11,7 +11,7 @@ const About = () => {
         <div className="img-container">
           <img
             src={
-              "https://images.pexels.com/photos/16373162/pexels-photo-16373162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              "https://images.unsplash.com/photo-1676278746103-c5a62b7faab9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
             }
             alt=""
           />
@@ -39,7 +39,7 @@ const About = () => {
             <li>I am passionate about bringing website to life</li>
             <li>
               I have a bachelor&#39;s degree in &#39;computer application&#39;
-              from Madras University, 8 months of relevant IT experience
+              from Madras University, 8 months of IT experience
             </li>
             <li>
               This coding habit started as a hobby and Now about to start my
@@ -151,9 +151,9 @@ const Wrapper = styled.section`
     display: grid;
     place-items: center;
     background: linear-gradient(
-      45deg,
+      50deg,
       transparent,
-      var(--clr-s-1),
+      var(--clr-p-7),
       transparent
     );
     border-radius: 2rem;
