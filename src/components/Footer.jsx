@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { navLinks } from "../data";
+import { footerLinks, navLinks } from "../data";
 import { FaFacebookF } from "react-icons/fa";
 const Footer = () => {
   return (
@@ -16,15 +16,13 @@ const Footer = () => {
           })}
         </ol>
         <div className="social-links">
-          <a href="#">
-            <FaFacebookF />
-          </a>
-          <a href="#">
-            <FaFacebookF />
-          </a>
-          <a href="#">
-            <FaFacebookF />
-          </a>
+          {footerLinks.map((link) => {
+            return (
+              <a key={link.id} href={link.url}>
+                <link.Icon></link.Icon>
+              </a>
+            );
+          })}
         </div>
       </div>
       <small>
@@ -61,6 +59,7 @@ const Wrapper = styled.footer`
     > a {
       background-color: var(--clr-p-10);
       padding: 0.6rem;
+      font-size: 1.3rem;
       display: flex;
       /* justify-content: center; */
       align-items: center;

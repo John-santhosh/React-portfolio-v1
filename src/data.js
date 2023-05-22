@@ -4,6 +4,8 @@ import {
   FaBookOpen,
   FaLinkedin,
   FaWhatsapp,
+  FaFacebookF,
+  FaGithub,
 } from "react-icons/fa";
 import { BiMessageRounded, BiGitBranch } from "react-icons/bi";
 import { nanoid } from "nanoid";
@@ -63,6 +65,24 @@ export const contacts = [
     connect: "Whatsapp",
     connectId: "75501883XXX",
     url: "https://Wa.me/7550188335",
+  },
+];
+
+export const footerLinks = [
+  {
+    id: nanoid(),
+    Icon: FaFacebookF,
+    url: "https://www.facebook.com/john.santosh.50/",
+  },
+  {
+    id: nanoid(),
+    Icon: FaLinkedin,
+    url: "https://www.linkedin.com/in/john-santhosh-664539219",
+  },
+  {
+    id: nanoid(),
+    Icon: FaGithub,
+    url: "https://github.com/John-santhosh1",
   },
 ];
 
