@@ -1,14 +1,12 @@
 import styled from "styled-components";
-import cv from "../assets/john-santhosh resume1.pdf";
-import { FaChevronCircleDown } from "react-icons/fa";
 import { MdOutlineWavingHand } from "react-icons/md";
 import { social } from "../data";
 import { useGlobalContext } from "../Context";
 const Hero = () => {
-  const profileImg =
-    "https://lh3.googleusercontent.com/5F8nL4p_wRyFERPXcuzE5IZe6dxDaovKYsonRrZAAC3Kuv6Zn-2lyE2Hhaow3wGKqYN_mSxoMa1o7ixz4CCiX-6fJnHtMfZ-up-MXxT0Zds_mwYPBwXCBQmUpJBacQOZZn0jZ1E-1odbI5yZa-RW5WVMOwoPz4ltN-H2Ld5lToKUmgWN5fNZs6Dz23pdgMIvqlvSaugSkCpH_X00rth4sGz22ConSHkEPzdKon-whh86SCvutORER-RsdsRrY7Tza5iGqYH9O_BSMLf4ar4Tvs9GL5Jxqh4njqAdQpeLAVhvNefIXNODaAZMXIEyyhWE9HWNw_jtII0I1KbtO2onrUsVfKA_5hvZnCehPMNv24-bSKZ6gSqSOHiBZ-qWYFKYBWd0ohKtaIgsf2CVcOezrflb2uBxhhl4zyPd-6JUJ_YoR3CCAwFQQTN3Zp4onGy1wASfIBhiXpVnAMaNhhLKG4HBQDkndPbgoogGxChegRdv5E7MnGAQWivRlR0FAg8hblb3QypZNxUwIwJoQFt7uMKYRj4T5R0pLNe5QscDF2zB9O50Xrq5_P9gIFQkpFuVtXosXPPC2_nH2EA2ijOUFmIR2lWLPVSBxVh7zJaMDKQpdEQ_Z8WPn1WW1mIfvWwrl6FVeAJLfPByxe2ooZJAwDQUQMjBkNolulQ2Sq38K18Ikmf2te5vnFPy80w5QL81qka3NWE2UBHv_s4yf9TCJVEXmwWjGJDz_Y3TPcn0rNLnkeu5eQYSblP7iuYLF3nteR4ws0ABMBxNHpmPy00RPIGqJE2Rx3-8G_uJNXZYgVj_y0meHKTAlpAoqADiaT9PBR8EIR2QBA2e9iFFyMfYMRPonEEePYsvSPZKyUiY8_aFU45_pEm6j7ZSTk4I7B_IBHHXW8IL7IH5BLuk2_O3N1v_MyJKjR802GbPjQhdn_l_-ekCIw=w327-h437-no?authuser=0";
   const { products } = useGlobalContext();
   const images = products.find((product) => product["tech-stack"] === true);
+  const profileImg = products.find((product) => product.main_pic)?.images[0]
+    .url;
   return (
     <Wrapper>
       <div className="section-center">

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { SlBadge } from "react-icons/sl";
+import { useGlobalContext } from "../Context";
 const About = () => {
+  const { products } = useGlobalContext();
+  const AboutImage = products.find((product) => product.main_pic)?.images[1]
+    .url;
   return (
     <Wrapper id="about" className="section-center">
       <span>
@@ -9,12 +13,7 @@ const About = () => {
       </span>
       <div className="">
         <div className="img-container">
-          <img
-            src={
-              "https://images.unsplash.com/photo-1676278746103-c5a62b7faab9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
-            }
-            alt=""
-          />
+          <img src={AboutImage} alt="its me John" />
         </div>
         <div className="about-me">
           <div className="about-card">
@@ -125,8 +124,8 @@ const Wrapper = styled.section`
     }
     > * {
       text-align: center;
-      background-color: var(--clr-p-9);
-      border: 2px solid var(--clr-p-10);
+      background-color: var(--clr-p-8);
+      border: 2px solid var(--clr-p-8);
       border-radius: 10px;
       padding: 2rem;
       transition: var(--transition);
@@ -164,10 +163,12 @@ const Wrapper = styled.section`
       transparent
     );
     border-radius: 2rem;
+    transform: rotateY(180deg);
   }
   .img-container img {
-    transform: rotate(10deg);
+    transform: rotate(-10deg);
     border-radius: 2rem;
+    object-position: top;
     aspect-ratio: 1/1;
     transition: var(--transition);
   }
