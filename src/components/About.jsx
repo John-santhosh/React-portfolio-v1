@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { SlBadge } from "react-icons/sl";
 import { useGlobalContext } from "../Context";
+import cv from "../assets/john-santhosh resume1.pdf";
 const About = () => {
   const { products } = useGlobalContext();
   const AboutImage = products.find((product) => product.main_pic)?.images[1]
     .url;
+  // const cv = products.find((product) => product.resume)?.images[0].url;
   return (
     <Wrapper id="about" className="section-center">
       <span>
@@ -51,9 +53,14 @@ const About = () => {
               hello!
             </li>
           </ol>
-          <a href="#contact">
-            <button className="btn btn-solid">Lets talk</button>
-          </a>
+          <div className="buttons">
+            <a href="#contact">
+              <button className="btn btn-solid">Lets talk</button>
+            </a>
+            <a download href={cv} target="_blank" rel="noreferrer">
+              <button className="download btn">DOWNLOAD CV</button>
+            </a>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -150,6 +157,10 @@ const Wrapper = styled.section`
         margin: 0.5rem 0;
       }
     }
+  }
+  .buttons {
+    display: flex;
+    gap: 1rem;
   }
   .img-container {
     width: 100%;
