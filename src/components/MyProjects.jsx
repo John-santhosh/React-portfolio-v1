@@ -79,17 +79,34 @@ function Project({ id, title, images, description, git, netlify, stack }) {
             );
           })}
         </p>
-        <div className="links-container">
-          <a href={git}>
-            <button className="btn">
-              code <BiGitBranch />
-            </button>
-          </a>
-          <a href={netlify}>
-            <button className="btn btn-solid">
-              netlify <RiExternalLinkFill />
-            </button>
-          </a>
+        <div target="_blank" className="links-container" rel="noreferrer">
+          {title === "MY PERSONAL PORTFOLIO" ? (
+            <>
+              <a href={git}>
+                <button className="btn">
+                  code <BiGitBranch />
+                </button>
+              </a>
+              <a href={netlify}>
+                <button className="btn btn-solid">
+                  netlify <RiExternalLinkFill />
+                </button>
+              </a>
+            </>
+          ) : (
+            <>
+              <a href={git}>
+                <button className="btn">
+                  code <BiGitBranch />
+                </button>
+              </a>
+              <a target="_blank" href={netlify} rel="noreferrer">
+                <button className="btn btn-solid">
+                  netlify <RiExternalLinkFill />
+                </button>
+              </a>
+            </>
+          )}
         </div>
       </div>
     </div>
