@@ -142,20 +142,22 @@ const Wrapper = styled.section`
     }
     > img {
       max-height: 350px;
-      min-height: 350px;
+      /* min-height: 350px; */
+      border: 1px solid var(--clr-p-8);
+
       overflow: hidden;
       /* width: 100%; */
       /* max-width: 400px; */
       /* max-height: 350px; */
       border-radius: 1rem;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   .sub-images {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
-    object-fit: cover;
+    /* object-fit: contain; */
     .active-img {
       filter: opacity(100%);
       border-radius: 50%;
@@ -163,8 +165,8 @@ const Wrapper = styled.section`
     }
 
     button {
-      max-width: 75px;
-      max-height: 75px;
+      width: 55px;
+      height: 55px;
       border: 1px solid transparent;
       transition: var(--transition);
       filter: opacity(35%);
@@ -174,6 +176,10 @@ const Wrapper = styled.section`
       img {
         height: 100%;
         border-radius: 50%;
+      }
+      @media only screen and (min-width: 550px) {
+        width: 65px;
+        height: 65px;
       }
     }
   }

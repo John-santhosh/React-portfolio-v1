@@ -146,17 +146,23 @@ export const skills = {
       skill: "Firebase",
       level: "Intermediate",
     },
-    // {
-    //   id: nanoid(),
-    //   Icon: CgRadioChecked,
-    //   skill: "Auth0",
-    //   level: "Intermediate",
-    // },
+    {
+      id: nanoid(),
+      Icon: CgRadioChecked,
+      skill: "Linux",
+      level: "Intermediate",
+    },
     {
       id: nanoid(),
       Icon: CgRadioChecked,
       skill: "WebAPI's",
       level: "Skilled",
+    },
+    {
+      id: nanoid(),
+      Icon: CgRadioChecked,
+      skill: "AWS",
+      level: "basic",
     },
   ],
 };

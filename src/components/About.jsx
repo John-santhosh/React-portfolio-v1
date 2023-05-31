@@ -98,6 +98,7 @@ const Wrapper = styled.section`
       .img-container {
         margin: 3rem 0;
         width: 65%;
+        overflow: visible;
       }
     }
     @media only screen and (max-width: 550px) {
