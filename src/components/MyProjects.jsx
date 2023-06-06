@@ -82,12 +82,12 @@ function Project({ id, title, images, description, git, netlify, stack }) {
         <div target="_blank" className="links-container" rel="noreferrer">
           {title === "MY PERSONAL PORTFOLIO" ? (
             <>
-              <a href={git}>
+              <a href={git} target="_blank" rel="noreferrer">
                 <button className="btn">
                   code <BiGitBranch />
                 </button>
               </a>
-              <a href={netlify} target="_blank" rel="noreferrer">
+              <a href={netlify}>
                 <button className="btn btn-solid">
                   netlify <RiExternalLinkFill />
                 </button>
