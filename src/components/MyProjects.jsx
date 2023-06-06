@@ -87,7 +87,7 @@ function Project({ id, title, images, description, git, netlify, stack }) {
                   code <BiGitBranch />
                 </button>
               </a>
-              <a href={netlify}>
+              <a href={netlify} target="_blank" rel="noreferrer">
                 <button className="btn btn-solid">
                   netlify <RiExternalLinkFill />
                 </button>
@@ -95,7 +95,7 @@ function Project({ id, title, images, description, git, netlify, stack }) {
             </>
           ) : (
             <>
-              <a href={git}>
+              <a href={git} target="_blank" rel="noreferrer">
                 <button className="btn">
                   code <BiGitBranch />
                 </button>
