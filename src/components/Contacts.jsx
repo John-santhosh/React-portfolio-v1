@@ -100,7 +100,7 @@ function Contact({ id, Icon, text, connect, connectId, url }) {
           copiedText();
         }}
       />
-      <small className={textCopied ? "hidden active" : "hidden"}>Copied!</small>
+      <small className={textCopied ? "hide active" : "hide"}>Copied!</small>
       <Icon />
       <p>{connect}</p>
       <span>{connectId}</span>
@@ -125,16 +125,18 @@ const Wrapper = styled.div`
   .text-hide {
     opacity: 0;
   }
-  .hidden {
+  .hide {
     transition: var(--transition);
     position: absolute;
     top: 1rem;
     left: 2.5rem;
     opacity: 0;
+    z-index: -1;
   }
 
   .active {
     opacity: 1;
+    z-index: 20;
   }
   p {
     text-transform: capitalize;
@@ -166,7 +168,7 @@ const Wrapper = styled.div`
 
       svg {
         font-size: 1.3rem;
-        margin: 1rem 0;
+        /* margin: 1rem 0; */
       }
       .copy {
         position: absolute;
