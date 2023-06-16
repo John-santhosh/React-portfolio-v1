@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { SlBadge } from "react-icons/sl";
 import { useGlobalContext } from "../Context";
-import cv from "../assets/john-santhosh resume1.pdf";
+import cv from "../assets/JOHN SANTHOSH Front-End_dev.pdf";
 const About = () => {
-  const { products } = useGlobalContext();
+  const { products, loading } = useGlobalContext();
   const AboutImage = products.find((product) => product.main_pic)?.images[1]
     .url;
   // const cv = products.find((product) => product.resume)?.images[0].url;
@@ -14,9 +14,13 @@ const About = () => {
         <h2>About me</h2>
       </span>
       <div className="">
-        <div className="img-container">
-          <img src={AboutImage} alt="its me John" />
-        </div>
+        {loading ? (
+          <div className="custom-loader"></div>
+        ) : (
+          <div className="img-container">
+            <img src={AboutImage} alt="its me John" />
+          </div>
+        )}
         <div className="about-me">
           <div className="about-card">
             <div>
@@ -178,14 +182,14 @@ const Wrapper = styled.section`
     transform: rotateY(180deg);
   }
   .img-container img {
-    transform: rotate(-10deg);
+    /* transform: rotate(-10deg); */
     border-radius: 2rem;
     object-position: top;
     aspect-ratio: 1/1;
     transition: var(--transition);
   }
-  img:hover {
+  /* img:hover {
     transform: rotate(0);
-  }
+  } */
 `;
 export default About;

@@ -2,58 +2,66 @@ import styled from "styled-components";
 import { MdOutlineWavingHand } from "react-icons/md";
 import { social } from "../data";
 import { useGlobalContext } from "../Context";
+import { useEffect } from "react";
 const Hero = () => {
-  const { products } = useGlobalContext();
+  const { products, loading } = useGlobalContext();
   const images = products.find((product) => product["tech-stack"] === true);
   const profileImg = products.find((product) => product.main_pic)?.images[0]
     .url;
+  useEffect(() => {
+    console.log(loading);
+  }, [loading]);
   return (
     <Wrapper>
-      <div className="section-center">
-        <div className="hero-container">
-          <div>
-            <h2>
-              Front-End React Developer{" "}
-              <MdOutlineWavingHand className="waves" />
-            </h2>
-            <p>
-              Hi, I&#39;m John Santhosh. A passionate Front-end React Developer
-              base in Chennai.{" "}
-            </p>
-          </div>
-          <div className="hero">
-            <div className="social-links">
-              <div className="social-icons">
-                {social.map((item) => {
-                  const { id, url, Icon } = item;
-                  return (
-                    <a target="_blank" href={url} key={id} rel="noreferrer">
-                      <Icon />
-                    </a>
-                  );
-                })}
-                {/* <hr /> */}
+      {loading ? (
+        <div className="custom-loader"></div>
+      ) : (
+        <div className="section-center">
+          <div className="hero-container">
+            <div>
+              <h2>
+                Front-End React Developer{" "}
+                <MdOutlineWavingHand className="waves" />
+              </h2>
+              <p>
+                Hi, I&#39;m John Santhosh. A passionate Front-end React
+                Developer base in Chennai.{" "}
+              </p>
+            </div>
+            <div className="hero">
+              <div className="social-links">
+                <div className="social-icons">
+                  {social.map((item) => {
+                    const { id, url, Icon } = item;
+                    return (
+                      <a target="_blank" href={url} key={id} rel="noreferrer">
+                        <Icon />
+                      </a>
+                    );
+                  })}
+                  {/* <hr /> */}
+                </div>
+              </div>
+              <div className="me">
+                <img src={profileImg} alt="its me" />
               </div>
             </div>
-            <div className="me">
-              <img src={profileImg} alt="its me" />
+          </div>
+          <div className="stack">
+            <h5>Tech Stack </h5>
+
+            <div>
+              {images?.images.map((image, ind) => {
+                return (
+                  <div className="tech-container" key={ind}>
+                    <img src={image.url} alt="" />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
-        <div className="stack">
-          <h5>Tech Stack </h5>
-
-          <div>
-            {images?.images.map((image, ind) => {
-              return (
-                <div className="tech-container" key={ind}>
-                  <img src={image.url} alt="" />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      )}
     </Wrapper>
   );
 };
