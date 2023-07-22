@@ -43,24 +43,24 @@ const About = () => {
           <ol>
             <li>I am passionate about bringing website to life</li>
             <li>
-              I have a bachelor&#39;s degree in &#39;computer application&#39;
-              from Madras University, 8 months of IT experience
+              I have a bachelor&#39;s degree in &#39;computer applications&#39;
+              and 8 months of IT experience.
             </li>
             <li>
               This coding habit started as a hobby and Now about to start my
-              carrier as a developer
+              carrier as a developer.
             </li>
             <li>
               I&#39;m happiest when creating, exploring, and thinking about
-              improving things. I&#39;m available for any freelancing or
-              internship or full-time SE role, feel free to reach out and say
-              hello!
+              improving things. I&#39;m available for any freelancing and
+              Full-Time SE role, Feel free to reach out and say hello!
             </li>
           </ol>
           <div className="buttons">
             <a href="#contact">
               <button className="btn btn-solid">Lets talk</button>
             </a>
+            {/* "https://www.canva.com/design/DAFpW1Q3irw/XfIpQNY76oC4V2jQPUqOpA/view?utm_content=DAFpW1Q3irw&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel" */}
             <a download href={cv} target="_blank" rel="noreferrer">
               <button className="download btn">DOWNLOAD CV</button>
             </a>
